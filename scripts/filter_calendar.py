@@ -42,7 +42,7 @@ def filter_calendar():
             filtered_cal.add_component(event)
     
     # Sauvegarder
-    output_path = Path(__file__).parent.parent / 'public' / 'filtered_calendar.ics'
+    output_path = Path(__file__).parent.parent / 'docs' / 'filtered_calendar.ics'
     with open(output_path, 'wb') as f:
         f.write(filtered_cal.to_ical())
 
