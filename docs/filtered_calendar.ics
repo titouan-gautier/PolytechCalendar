@@ -187,6 +187,31 @@ DESCRIPTION:\nMatière : Projet transversal 1\nGroupe : INFO4 Groupe 1\, I
 LOCATION:Pas de salle
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TP - apprentissage par renforcement\, LE CAPITAINE\, Hoel
+DTSTART:20250203T080000
+DTEND:20250203T093000
+DTSTAMP:20250204T051533
+UID:2216798-17
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : apprentissage par renforcement\nPersonnel : LE CA
+ PITAINE\, Hoel\nGroupe : INFO4 Groupe 3\nSalle : B001 (Ireste) VP\nRemarqu
+ es : Groupe A
+LOCATION:B001 (Ireste) VP
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, AIT OUBELLI\, Lynda\, PIGE
+ AU\, Antoine
+DTSTART:20250224T080000
+DTEND:20250224T093000
+DTSTAMP:20250204T051533
+UID:2263400-18
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : AIT
+  OUBELLI\, Lynda\, PIGEAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : C003
+  (Ireste) VP +13 PC (info)\nRemarques : Groupe BTP5
+LOCATION:C003 (Ireste) VP +13 PC (info)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:TD - Développement durable et responsabilité sociétale\, AIT OU
  BELLI\, Lynda\, CHARPENTIER\, Laurence\, PARREIN\, Benoit
 DTSTART:20250310T080000
@@ -432,6 +457,31 @@ DESCRIPTION:\nMatière : Projet Transversal II\nGroupe : INFO4 Groupe 1\,
 LOCATION:Pas de salle
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, AIT OUBELLI\, Lynda\, PIGE
+ AU\, Antoine
+DTSTART:20250127T094500
+DTEND:20250127T111500
+DTSTAMP:20250204T051533
+UID:2213061-39
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : AIT
+  OUBELLI\, Lynda\, PIGEAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : B001
+  (Ireste) VP\nRemarques : Groupe B
+LOCATION:B001 (Ireste) VP
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - apprentissage par renforcement\, LE CAPITAINE\, Hoel
+DTSTART:20250224T094500
+DTEND:20250224T111500
+DTSTAMP:20250204T051533
+UID:2216815-43
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : apprentissage par renforcement\nPersonnel : LE CA
+ PITAINE\, Hoel\nGroupe : INFO4 Groupe 3\nSalle : C003 (Ireste) VP +13 PC (
+ info)\nRemarques : Groupe A
+LOCATION:C003 (Ireste) VP +13 PC (info)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:TD - Questions éthiques\, sociétales & écolo en info\, KUNTZ-CO
  SPEREC\, Pascale
 DTSTART:20250317T094500
@@ -443,6 +493,19 @@ DESCRIPTION:\nMatière : Questions éthiques\, sociétales & écolo en inf
  o\nPersonnel : KUNTZ-COSPEREC\, Pascale\nGroupe : INFO4 Groupe 3\nSalle : 
  D013 (Ireste) 110pl + Vp (Cours-Examens)
 LOCATION:D013 (Ireste) 110pl + Vp (Cours-Examens)
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, AIT OUBELLI\, Lynda\, PIGE
+ AU\, Antoine
+DTSTART:20250331T094500
+DTEND:20250331T111500
+DTSTAMP:20250204T051533
+UID:2219581-45
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : AIT
+  OUBELLI\, Lynda\, PIGEAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : D009
+  (Ireste) 24pl + Vp (TP Info)\nRemarques : Groupe B
+LOCATION:D009 (Ireste) 24pl + Vp (TP Info)
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:TD - Entreprise : Approches critiques de l'entreprise\, THOREL\, G
@@ -698,6 +761,32 @@ DESCRIPTION:\nMatière : Modélisation de problèmes et Optimisation comb.
 LOCATION:D013 (Ireste) 110pl + Vp (Cours-Examens)
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TP - Réseaux de neurones avancés\, MOUCHERE\, Harold\, NORMAND\,
+  Nicolas
+DTSTART:20250324T113000
+DTEND:20250324T130000
+DTSTAMP:20250204T051533
+UID:2214599-68
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Réseaux de neurones avancés\nPersonnel : MOUCHE
+ RE\, Harold\, NORMAND\, Nicolas\nGroupe : INFO4 Groupe 3\nSalle : D009 (Ir
+ este) 24pl + Vp (TP Info)\nRemarques : Groupe 3 B
+LOCATION:D009 (Ireste) 24pl + Vp (TP Info)
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - Réseaux de neurones avancés\, MOUCHERE\, Harold\, NORMAND\,
+  Nicolas
+DTSTART:20250331T113000
+DTEND:20250331T130000
+DTSTAMP:20250204T051533
+UID:2216465-69
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Réseaux de neurones avancés\nPersonnel : MOUCHE
+ RE\, Harold\, NORMAND\, Nicolas\nGroupe : INFO4 Groupe 3\nSalle : D009 (Ir
+ este) 24pl + Vp (TP Info)\nRemarques : Groupe 3 B
+LOCATION:D009 (Ireste) 24pl + Vp (TP Info)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:TD - Entreprise : Approches critiques de l'entreprise\, THOREL\, G
  wenaël
 DTSTART:20250505T113000
@@ -865,6 +954,18 @@ CATEGORIES:CELCAT Timetabler (vcal) - 2025
 DESCRIPTION:\nMatière : Projet Transversal II\nGroupe : INFO4 Groupe 3\nS
  alle : Pas de salle
 LOCATION:Pas de salle
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - apprentissage par renforcement\, LE CAPITAINE\, Hoel
+DTSTART:20250127T140000
+DTEND:20250127T153000
+DTSTAMP:20250204T051533
+UID:2216543-85
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : apprentissage par renforcement\nPersonnel : LE CA
+ PITAINE\, Hoel\nGroupe : INFO4 Groupe 3\nSalle : D009 (Ireste) 24pl + Vp (
+ TP Info)\nRemarques : Groupe A
+LOCATION:D009 (Ireste) 24pl + Vp (TP Info)
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Soutenance - Projet transversal 1\, GELGON\, Marc\, LERAY\, Philip
@@ -2360,6 +2461,19 @@ DESCRIPTION:\nMatière : Systèmes de raisonnement probabiliste\nPersonnel
 LOCATION:D010 (Ireste) 48pl + Vp (Cours)
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, AIT OUBELLI\, Lynda\, PIGE
+ AU\, Antoine
+DTSTART:20250401T080000
+DTEND:20250401T093000
+DTSTAMP:20250204T051533
+UID:2219576-221
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : AIT
+  OUBELLI\, Lynda\, PIGEAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : D117
+  (Ireste) 24pl + Vp (Cours-TP)\nRemarques : Groupe Btp8
+LOCATION:D117 (Ireste) 24pl + Vp (Cours-TP)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:TD - Introduction théories calculabilité / complexité\, MARTINE
  Z\, Jose
 DTSTART:20250506T080000
@@ -3217,6 +3331,18 @@ DESCRIPTION:\nMatière : Multimédia\nPersonnel : GELGON\, Marc\nGroupe :
 LOCATION:D004 (Ireste) 65pl + Vp (Cours)
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, PIGEAU\, Antoine
+DTSTART:20250408T140000
+DTEND:20250408T153000
+DTSTAMP:20250204T051533
+UID:2219559-290
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : PIG
+ EAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : D117 (Ireste) 24pl + Vp (C
+ ours-TP)\nRemarques : Groupe Btp9
+LOCATION:D117 (Ireste) 24pl + Vp (Cours-TP)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:CM - Multimédia\, GELGON\, Marc
 DTSTART:20250422T140000
 DTEND:20250422T151500
@@ -3303,6 +3429,19 @@ DESCRIPTION:\nMatière : Programmation à objets avancé : langage C++\nPe
  urs-TP)\nRemarques : 1/3 Temps
 LOCATION:D013 (Ireste) 110pl + Vp (Cours-Examens)\, D116 (Ireste) 20pl + V
  p (Cours-TP)\, D117 (Ireste) 24pl + Vp (Cours-TP)
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - Test\, intégration et déploiement logiciels\, COHEN\, Julie
+ n
+DTSTART:20250128T153000
+DTEND:20250128T170000
+DTSTAMP:20250204T051533
+UID:2243313-298
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Test\, intégration et déploiement logiciels\nPe
+ rsonnel : COHEN\, Julien\nGroupe : INFO4 Groupe 3\nSalle : C003 (Ireste) V
+ P +13 PC (info)\nRemarques : Groupe B
+LOCATION:C003 (Ireste) VP +13 PC (info)
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Examens - apprentissage par renforcement\, AIT OUBELLI\, Lynda\, C
@@ -3765,6 +3904,32 @@ DESCRIPTION:\nMatière : Traitement d'image\nPersonnel : GELGON\, Marc\, G
  UEDON\, Jean-Pierre\nGroupe : INFO4 Groupe 3\nSalle : D004 (Ireste) 65pl +
   Vp (Cours)
 LOCATION:D004 (Ireste) 65pl + Vp (Cours)
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, AIT OUBELLI\, Lynda\, PIGE
+ AU\, Antoine
+DTSTART:20250122T080000
+DTEND:20250122T093000
+DTSTAMP:20250204T051533
+UID:2213028-340
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : AIT
+  OUBELLI\, Lynda\, PIGEAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : B001
+  (Ireste) VP\nRemarques : Groupe B
+LOCATION:B001 (Ireste) VP
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, AIT OUBELLI\, Lynda\, PIGE
+ AU\, Antoine
+DTSTART:20250205T080000
+DTEND:20250205T093000
+DTSTAMP:20250204T051533
+UID:2214298-342
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : AIT
+  OUBELLI\, Lynda\, PIGEAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : C002
+  (IRESTE) 13PC + Vp (info)\nRemarques : Groupe B
+LOCATION:C002 (IRESTE) 13PC + Vp (info)
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:Soutenance - Projet transversal 1\, GELGON\, Marc\, LERAY\, Philip
@@ -4389,6 +4554,19 @@ CATEGORIES:CELCAT Timetabler (vcal) - 2025
 DESCRIPTION:\nMatière : apprentissage par renforcement\nPersonnel : LE CA
  PITAINE\, Hoel\nGroupe : INFO4 Groupe 3\nSalle : C008 (IRESTE) 50pl + VP
 LOCATION:C008 (IRESTE) 50pl + VP
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, AIT OUBELLI\, Lynda\, PIGE
+ AU\, Antoine
+DTSTART:20250226T113000
+DTEND:20250226T130000
+DTSTAMP:20250204T051533
+UID:2219544-396
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : AIT
+  OUBELLI\, Lynda\, PIGEAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : C002
+  (IRESTE) 13PC + Vp (info)\nRemarques : Groupe BTP6
+LOCATION:C002 (IRESTE) 13PC + Vp (info)
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:TD - Questions éthiques\, sociétales & écolo en info\, KUNTZ-CO
@@ -7243,6 +7421,19 @@ DESCRIPTION:\nMatière : Humains : Projet professionnel 3\nPersonnel : LE
 LOCATION:A101 (IHT) 30pl + Vp (Arronax)
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TP - Test\, intégration et déploiement logiciels\, COHEN\, Julie
+ n
+DTSTART:20250130T113000
+DTEND:20250130T130000
+DTSTAMP:20250204T051533
+UID:2243324-621
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Test\, intégration et déploiement logiciels\nPe
+ rsonnel : COHEN\, Julien\nGroupe : INFO4 Groupe 3\nSalle : D117 (Ireste) 2
+ 4pl + Vp (Cours-TP)\nRemarques : Groupe B
+LOCATION:D117 (Ireste) 24pl + Vp (Cours-TP)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:TD - Humains : Projet professionnel 3\, LE GALLO\, Christelle
 DTSTART:20250206T113000
 DTEND:20250206T130000
@@ -8642,6 +8833,19 @@ DESCRIPTION:\nMatière : Projet Transversal II\nGroupe : INFO4 Groupe 3\nS
 LOCATION:Pas de salle
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TP - Réseaux de neurones avancés\, MOUCHERE\, Harold\, NORMAND\,
+  Nicolas
+DTSTART:20250328T080000
+DTEND:20250328T093000
+DTSTAMP:20250204T051534
+UID:2216462-728
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Réseaux de neurones avancés\nPersonnel : MOUCHE
+ RE\, Harold\, NORMAND\, Nicolas\nGroupe : INFO4 Groupe 3\nSalle : D009 (Ir
+ este) 24pl + Vp (TP Info)\nRemarques : Groupe 3 B
+LOCATION:D009 (Ireste) 24pl + Vp (TP Info)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:CM - Ingénierie de la Transition/Interdisciplinarité S7\, AUVITY
  \, Bruno\, CHARPENTIER\, Laurence
 DTSTART:20250404T080000
@@ -8872,6 +9076,18 @@ DESCRIPTION:\nMatière : Génie logiciel pour la gestion de projets 1\nPer
  sonnel : PERSON\, Ambre\nGroupe : INFO4 PROMOTION\nSalle : D013 (Ireste) 1
  10pl + Vp (Cours-Examens)
 LOCATION:D013 (Ireste) 110pl + Vp (Cours-Examens)
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - apprentissage par renforcement\, LE CAPITAINE\, Hoel
+DTSTART:20250228T094500
+DTEND:20250228T111500
+DTSTAMP:20250204T051534
+UID:2216821-747
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : apprentissage par renforcement\nPersonnel : LE CA
+ PITAINE\, Hoel\nGroupe : INFO4 Groupe 3\nSalle : C002 (IRESTE) 13PC + Vp (
+ info)\nRemarques : Groupe A
+LOCATION:C002 (IRESTE) 13PC + Vp (info)
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:CM - Réseaux de neurones avancés\, MOUCHERE\, Harold
@@ -9490,6 +9706,18 @@ DESCRIPTION:\nMatière : Ingénierie de la Transition/Interdisciplinarité
 LOCATION:D005 (Ireste)\, D012 (Ireste) 24pl + Vp (TP Info)
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TP - apprentissage par renforcement\, LE CAPITAINE\, Hoel
+DTSTART:20250207T140000
+DTEND:20250207T153000
+DTSTAMP:20250204T051534
+UID:2216806-799
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : apprentissage par renforcement\nPersonnel : LE CA
+ PITAINE\, Hoel\nGroupe : INFO4 Groupe 3\nSalle : C002 (IRESTE) 13PC + Vp (
+ info)\nRemarques : Groupe A
+LOCATION:C002 (IRESTE) 13PC + Vp (info)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:Soutenance - Projet transversal 1\, GELGON\, Marc\, LERAY\, Philip
  pe\, PRIE\, Yannick
 DTSTART:20250214T140000
@@ -9703,6 +9931,18 @@ CATEGORIES:CELCAT Timetabler (vcal) - 2025
 DESCRIPTION:\nMatière : Cryptographie\nPersonnel : PARREIN\, Benoit\nGrou
  pe : INFO4 PROMOTION\nSalle : D013 (Ireste) 110pl + Vp (Cours-Examens)
 LOCATION:D013 (Ireste) 110pl + Vp (Cours-Examens)
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, AIT OUBELLI\, Lynda
+DTSTART:20250207T154500
+DTEND:20250207T171500
+DTSTAMP:20250204T051534
+UID:2214207-818
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : AIT
+  OUBELLI\, Lynda\nGroupe : INFO4 Groupe 3\nSalle : C002 (IRESTE) 13PC + Vp
+  (info)\nRemarques : Groupe BTP4
+LOCATION:C002 (IRESTE) 13PC + Vp (info)
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:TP - Multimédia\, PERREIRA DA SILVA\, Matthieu
