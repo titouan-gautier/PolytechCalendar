@@ -32,10 +32,10 @@ def filter_calendar():
         
         if matiere_match and remarque_match:
             matiere = matiere_match.group(1).lower()
-            groupe = remarque_match.group(1).strip()
+            groupe = remarque_match.group(1).strip().lower()
             
             if matiere in config['filters']:
-                if str(config['filters'][matiere]) not in groupe:
+                if str(config['filters'][matiere]).lower() not in groupe:
                     keep = False
         
         if keep:

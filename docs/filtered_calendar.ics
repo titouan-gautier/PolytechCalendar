@@ -1,0 +1,17 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mon Calendrier Filtre//
+BEGIN:VEVENT
+SUMMARY:TP - Patrons de conception logicielle\, AIT OUBELLI\, Lynda\, PIGE
+ AU\, Antoine
+DTSTART:20250226T113000
+DTEND:20250226T130000
+DTSTAMP:20250204T051533
+UID:2219544-396
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : AIT
+  OUBELLI\, Lynda\, PIGEAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : C002
+  (IRESTE) 13PC + Vp (info)\nRemarques : Groupe BTP6
+LOCATION:C002 (IRESTE) 13PC + Vp (info)
+END:VEVENT
+END:VCALENDAR
