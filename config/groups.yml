@@ -1,9 +1,18 @@
 # Configuration des demi-groupes par matière
 filters:
+<<<<<<< HEAD
   "apprentissage par renforcement": A
   "patrons de conception logicielle": B
   "modélisation de problèmes et Optimisation combinatoire": B
   "réseaux de neurones avancés": B
   "test, intégration et déploiement logiciels": B
+=======
+  "apprentissage par renforcement": A,
+  "patrons de conception logicielle": B,
+  "modélisation de problèmes et Optimisation combinatoire": B,
+  "réseaux de neurones avancés": B,
+  "test, intégration et déploiement logiciels": B,
+  "Humains : Projet professionnel 3": B,
+>>>>>>> refs/remotes/origin/main
 # URL du calendrier original
 ical_url: "https://edt.univ-nantes.fr/chantrerie-gavy/g1340158.ics"
