@@ -95,9 +95,9 @@
         const button = document.getElementById("refreshButton");
         const status = document.getElementById("statusMessage");
 
-        const part1 = "ghp_lemHj8"
-        const part2 = "JJiDbPZMjPG179skXL"
-        const part3 = "wU6u52318rCt"
+        const part1 = "ghp_LSWZ6g7gp";
+        const part2 = "A9K3ziJb7e2o";
+        const part3 = "NFqCqd50R0q8gCF";
 
         try {
           button.disabled = true;
@@ -106,15 +106,15 @@
           const response = await fetch(
             `https://api.github.com/repos/titouna-gautier/PolytechCalendar/actions/workflows/update_calendar.yml/dispatches`,
             {
-                method: 'POST',
-            headers: {
-                'Accept': 'application/vnd.github+json',
-                'Authorization': `Bearer ${part1 + part2 + part3}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                ref: 'main' // Branche à cibler
-            })
+              method: "POST",
+              headers: {
+                Accept: "application/vnd.github+json",
+                Authorization: `Bearer ${part1 + part2 + part3}`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                ref: "main", // Branche à cibler
+              }),
             }
           );
 
