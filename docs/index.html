@@ -14,9 +14,11 @@
     <h1>Calendrier des Cours Filtre</h1>
     <div id='calendar'></div>
 
+    <!-- Ajout de ical.js avant FullCalendar -->
+    <script src='https://cdn.jsdelivr.net/npm/ical.js@1.4.0/build/ical.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/fr.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@5.11.3/main.global.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/fr.min.js'></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -30,10 +32,16 @@
                 },
                 events: {
                     url: 'filtered_calendar.ics',
-                    format: 'ics'
+                    format: 'ics',
+                    // Ajout d'un cache-buster
+                    extraParams: function() {
+                        return {
+                            cache: new Date().getTime()
+                        };
+                    }
                 },
                 locale: 'fr',
-                firstDay: 1, // Lundi comme premier jour
+                firstDay: 1,
                 slotMinTime: '08:00:00',
                 slotMaxTime: '20:00:00',
                 height: 'auto',
