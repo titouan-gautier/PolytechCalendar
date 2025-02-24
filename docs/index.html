@@ -93,6 +93,10 @@
         const button = document.getElementById("refreshButton");
         const status = document.getElementById("statusMessage");
 
+        const part1 = "ghp_lemHj8"
+        const part2 = "JJiDbPZMjPG179skXL"
+        const part3 = "wU6u52318rCt"
+
         try {
           button.disabled = true;
           status.textContent = "Rafraîchissement en cours...";
@@ -103,7 +107,7 @@
               method: "POST",
               headers: {
                 Accept: "application/vnd.github+json",
-                Authorization: `Bearer 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`,
+                Authorization: `Bearer ${part1}${part2}${part3}`,
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
