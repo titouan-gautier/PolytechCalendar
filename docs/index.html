@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Calendrier Filtre</title>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <style>
+        body { margin: 2em; font-family: Arial, sans-serif; }
+        #calendar { max-width: 1000px; margin: 0 auto; }
+        .fc-toolbar-title { font-size: 1.5em; }
+    </style>
+</head>
+<body>
+    <h1>Calendrier des Cours Filtre</h1>
+    <div id='calendar'></div>
+
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/fr.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@5.11.3/main.global.min.js'></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'timeGridWeek',
+                headerToolbar: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                events: {
+                    url: 'filtered_calendar.ics',
+                    format: 'ics'
+                },
+                locale: 'fr',
+                firstDay: 1, // Lundi comme premier jour
+                slotMinTime: '08:00:00',
+                slotMaxTime: '20:00:00',
+                height: 'auto',
+                eventTimeFormat: { 
+                    hour: '2-digit',
+                    minute: '2-digit',
+                    meridiem: false
+                }
+            });
+            calendar.render();
+        });
+    </script>
+</body>
+</html>
