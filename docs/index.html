@@ -1,138 +1,195 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8' />
+  <head>
+    <meta charset="utf-8" />
     <title>Calendrier Filtre</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --fc-small-font-size: 0.85em;
-            --fc-page-bg-color: #fff;
+      :root {
+        --fc-small-font-size: 0.85em;
+        --fc-page-bg-color: #fff;
+      }
+
+      body {
+        margin: 1em;
+        font-family: Arial, sans-serif;
+        line-height: 1.5;
+      }
+
+      h1 {
+        font-size: 1.6em;
+        text-align: center;
+        margin: 0.5em 0;
+      }
+
+      #calendar {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+
+      /* Adaptation mobile */
+      @media (max-width: 768px) {
+        body {
+          margin: 0.5em;
         }
 
-        body { 
-            margin: 1em; 
-            font-family: Arial, sans-serif;
-            line-height: 1.5;
+        .fc-toolbar {
+          flex-direction: column;
+          gap: 0.5em;
         }
 
-        h1 {
-            font-size: 1.6em;
-            text-align: center;
-            margin: 0.5em 0;
+        .fc-toolbar-title {
+          font-size: 1.2em;
+          order: -1;
         }
 
-        #calendar {
-            max-width: 100%;
-            margin: 0 auto;
+        .fc-button-group {
+          flex-wrap: wrap;
+          gap: 0.3em;
         }
 
-        /* Adaptation mobile */
-        @media (max-width: 768px) {
-            body {
-                margin: 0.5em;
-            }
-            
-            .fc-toolbar {
-                flex-direction: column;
-                gap: 0.5em;
-            }
-            
-            .fc-toolbar-title {
-                font-size: 1.2em;
-                order: -1;
-            }
-            
-            .fc-button-group {
-                flex-wrap: wrap;
-                gap: 0.3em;
-            }
-            
-            .fc-button {
-                padding: 0.3em 0.6em;
-                font-size: 0.9em;
-            }
-            
-            .fc-timeGridWeek-button,
-            .fc-dayGridMonth-button {
-                display: none;
-            }
-            
-            .fc-event {
-                font-size: 0.8em;
-                padding: 2px;
-            }
+        .fc-button {
+          padding: 0.3em 0.6em;
+          font-size: 0.9em;
         }
 
-        /* Amélioration tactile */
+        .fc-timeGridWeek-button,
+        .fc-dayGridMonth-button {
+          display: none;
+        }
+
         .fc-event {
-            cursor: pointer;
-            transition: opacity 0.2s;
+          font-size: 0.8em;
+          padding: 2px;
         }
-        
-        .fc-event:hover {
-            opacity: 0.8;
-        }
-    </style>
-</head>
-<body>
-    <div id='calendar'></div>
+      }
 
-    <script src='https://cdn.jsdelivr.net/npm/ical.js@1.4.0/build/ical.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@5.11.3/main.global.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/fr.min.js'></script>
+      /* Amélioration tactile */
+      .fc-event {
+        cursor: pointer;
+        transition: opacity 0.2s;
+      }
+
+      .fc-event:hover {
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="calendar"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/ical.js@1.4.0/build/ical.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@5.11.3/main.global.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/fr.min.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const calendarEl = document.getElementById('calendar');
-            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      // Fonction pour déclencher le workflow
+      async function triggerWorkflow() {
+        const button = document.getElementById("refreshButton");
+        const status = document.getElementById("statusMessage");
 
-            const calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: isMobile ? 'timeGridDay' : 'timeGridWeek',
-                headerToolbar: {
-                    left: 'prev,next today',
-                    center: 'title',
-                    right: isMobile ? 'timeGridDay,listWeek' : 'dayGridMonth,timeGridWeek,timeGridDay'
-                },
-                views: {
-                    listWeek: {
-                        type: 'list',
-                        duration: { days: 7 },
-                        listDayFormat: { weekday: 'short', month: 'numeric', day: 'numeric' }
-                    }
-                },
-                events: {
-                    url: 'filtered_calendar.ics',
-                    format: 'ics',
-                    extraParams: () => ({ cache: Date.now() })
-                },
-                locale: 'fr',
-                firstDay: 1,
-                slotMinTime: '08:00:00',
-                slotMaxTime: '20:00:00',
-                height: 'auto',
-                navLinks: true,
-                nowIndicator: true,
-                eventTimeFormat: {
-                    hour: '2-digit',
-                    minute: '2-digit',
-                    meridiem: false
-                },
-                eventDidMount: function(info) {
-                    // Ajout du titre au survol pour les événements tronqués
-                    info.el.title = info.event.title;
-                }
-            });
+        try {
+          button.disabled = true;
+          status.textContent = "Rafraîchissement en cours...";
 
-            calendar.render();
-            
-            // Rafraîchissement automatique lors du redimensionnement
-            window.addEventListener('resize', () => {
-                calendar.changeView(isMobile ? 'timeGridDay' : 'timeGridWeek');
-            });
-        });
+          const response = await fetch(
+            `https://api.github.com/repos/titouna-gautier/PolytechCalendar/actions/workflows/update_calendar.yml/dispatches`,
+            {
+              method: "POST",
+              headers: {
+                Accept: "application/vnd.github+json",
+                Authorization: `Bearer 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`,
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                ref: "main",
+              }),
+            }
+          );
+
+          if (response.ok) {
+            status.textContent =
+              "Rafraîchissement déclenché ! Le calendrier sera mis à jour dans quelques minutes.";
+            setTimeout(() => {
+              window.location.reload();
+            }, 120000); // Recharger après 2 minutes
+          } else {
+            throw new Error("Erreur lors du déclenchement");
+          }
+        } catch (error) {
+          status.textContent = "Erreur : " + error.message;
+          console.error(error);
+        } finally {
+          button.disabled = false;
+        }
+      }
+
+      // Ajout du gestionnaire d'événement
+      document
+        .getElementById("refreshButton")
+        .addEventListener("click", triggerWorkflow);
     </script>
-</body>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarEl = document.getElementById("calendar");
+        const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: isMobile ? "timeGridDay" : "timeGridWeek",
+          headerToolbar: {
+            left: "prev,next today",
+            center: "title",
+            right: isMobile
+              ? "timeGridDay,listWeek"
+              : "dayGridMonth,timeGridWeek,timeGridDay",
+          },
+          views: {
+            listWeek: {
+              type: "list",
+              duration: { days: 7 },
+              listDayFormat: {
+                weekday: "short",
+                month: "numeric",
+                day: "numeric",
+              },
+            },
+          },
+          events: {
+            url: "filtered_calendar.ics",
+            format: "ics",
+            extraParams: () => ({ cache: Date.now() }),
+          },
+          locale: "fr",
+          firstDay: 1,
+          slotMinTime: "08:00:00",
+          slotMaxTime: "20:00:00",
+          height: "auto",
+          navLinks: true,
+          nowIndicator: true,
+          eventTimeFormat: {
+            hour: "2-digit",
+            minute: "2-digit",
+            meridiem: false,
+          },
+          eventDidMount: function (info) {
+            // Ajout du titre au survol pour les événements tronqués
+            info.el.title = info.event.title;
+          },
+        });
+
+        calendar.render();
+
+        // Rafraîchissement automatique lors du redimensionnement
+        window.addEventListener("resize", () => {
+          calendar.changeView(isMobile ? "timeGridDay" : "timeGridWeek");
+        });
+      });
+    </script>
+  </body>
 </html>
