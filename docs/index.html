@@ -3,18 +3,82 @@
 <head>
     <meta charset='utf-8' />
     <title>Calendrier Filtre</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.css' rel='stylesheet' />
     <style>
-        body { margin: 2em; font-family: Arial, sans-serif; }
-        #calendar { max-width: 1000px; margin: 0 auto; }
-        .fc-toolbar-title { font-size: 1.5em; }
+        :root {
+            --fc-small-font-size: 0.85em;
+            --fc-page-bg-color: #fff;
+        }
+
+        body { 
+            margin: 1em; 
+            font-family: Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        h1 {
+            font-size: 1.6em;
+            text-align: center;
+            margin: 0.5em 0;
+        }
+
+        #calendar {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Adaptation mobile */
+        @media (max-width: 768px) {
+            body {
+                margin: 0.5em;
+            }
+            
+            .fc-toolbar {
+                flex-direction: column;
+                gap: 0.5em;
+            }
+            
+            .fc-toolbar-title {
+                font-size: 1.2em;
+                order: -1;
+            }
+            
+            .fc-button-group {
+                flex-wrap: wrap;
+                gap: 0.3em;
+            }
+            
+            .fc-button {
+                padding: 0.3em 0.6em;
+                font-size: 0.9em;
+            }
+            
+            .fc-timeGridWeek-button,
+            .fc-dayGridMonth-button {
+                display: none;
+            }
+            
+            .fc-event {
+                font-size: 0.8em;
+                padding: 2px;
+            }
+        }
+
+        /* Amélioration tactile */
+        .fc-event {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .fc-event:hover {
+            opacity: 0.8;
+        }
     </style>
 </head>
 <body>
-    <h1>Calendrier des Cours Filtre</h1>
     <div id='calendar'></div>
 
-    <!-- Ajout de ical.js avant FullCalendar -->
     <script src='https://cdn.jsdelivr.net/npm/ical.js@1.4.0/build/ical.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/@fullcalendar/icalendar@5.11.3/main.global.min.js'></script>
@@ -22,36 +86,52 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'timeGridWeek',
+            const calendarEl = document.getElementById('calendar');
+            const isMobile = window.matchMedia('(max-width: 768px)').matches;
+
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: isMobile ? 'timeGridDay' : 'timeGridWeek',
                 headerToolbar: {
                     left: 'prev,next today',
                     center: 'title',
-                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                    right: isMobile ? 'timeGridDay,listWeek' : 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                views: {
+                    listWeek: {
+                        type: 'list',
+                        duration: { days: 7 },
+                        listDayFormat: { weekday: 'short', month: 'numeric', day: 'numeric' }
+                    }
                 },
                 events: {
                     url: 'filtered_calendar.ics',
                     format: 'ics',
-                    // Ajout d'un cache-buster
-                    extraParams: function() {
-                        return {
-                            cache: new Date().getTime()
-                        };
-                    }
+                    extraParams: () => ({ cache: Date.now() })
                 },
                 locale: 'fr',
                 firstDay: 1,
                 slotMinTime: '08:00:00',
                 slotMaxTime: '20:00:00',
                 height: 'auto',
-                eventTimeFormat: { 
+                navLinks: true,
+                nowIndicator: true,
+                eventTimeFormat: {
                     hour: '2-digit',
                     minute: '2-digit',
                     meridiem: false
+                },
+                eventDidMount: function(info) {
+                    // Ajout du titre au survol pour les événements tronqués
+                    info.el.title = info.event.title;
                 }
             });
+
             calendar.render();
+            
+            // Rafraîchissement automatique lors du redimensionnement
+            window.addEventListener('resize', () => {
+                calendar.changeView(isMobile ? 'timeGridDay' : 'timeGridWeek');
+            });
         });
     </script>
 </body>
