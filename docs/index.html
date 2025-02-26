@@ -77,6 +77,12 @@
       .fc-event:hover {
         opacity: 0.8;
       }
+
+      .fc-event-main {
+        display: flex;
+        flex-direction: column;
+        padding: 2px;
+    }
     </style>
   </head>
   <body>
@@ -186,6 +192,18 @@
           eventDidMount: function (info) {
             // Ajout du titre au survol pour les événements tronqués
             info.el.title = info.event.title;
+
+            const description = info.event.extendedProps.description || "";
+            const salleMatch = description.match(/Salle : (.+)/);
+
+            if (salleMatch && salleMatch[1]) {
+              const salleElement = document.createElement("div");
+              salleElement.style.fontSize = "0.85em";
+              salleElement.style.color = "#666";
+              salleElement.textContent = `🏫 ${salleMatch[1].trim()}`;
+
+              info.el.querySelector(".fc-event-main").appendChild(salleElement);
+            }
           },
         });
 
