@@ -167,6 +167,69 @@
         const calendarEl = document.getElementById("calendar");
         const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
+        // Créer un élément pour le popup
+        const popupEl = document.createElement("div");
+        popupEl.id = "event-popup";
+        document.body.appendChild(popupEl);
+
+        // Style pour le popup
+        const style = document.createElement("style");
+        style.textContent = `
+    #event-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      padding: 15px;
+      z-index: 1000;
+      max-width: 90%;
+      width: 300px;
+    }
+    
+    #event-popup h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.2em;
+    }
+    
+    #event-popup p {
+      margin: 5px 0;
+    }
+    
+    #event-popup .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 20px;
+      width: 20px;
+      height: 20px;
+      text-align: center;
+    }
+    
+    .popup-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,0.3);
+      z-index: 999;
+      display: none;
+    }
+  `;
+        document.head.appendChild(style);
+
+        // Créer un backdrop (arrière-plan semi-transparent)
+        const backdropEl = document.createElement("div");
+        backdropEl.className = "popup-backdrop";
+        document.body.appendChild(backdropEl);
+
         const calendar = new FullCalendar.Calendar(calendarEl, {
           initialView: isMobile ? "timeGridDay" : "timeGridWeek",
           headerToolbar: {
@@ -179,7 +242,7 @@
           views: {
             listWeek: {
               type: "list",
-              duration: { days: 5 },
+              duration: { days: 7 },
               listDayFormat: {
                 weekday: "short",
                 month: "numeric",
@@ -196,9 +259,7 @@
           firstDay: 1,
           slotMinTime: "08:00:00",
           slotMaxTime: "20:00:00",
-          slotHeight: 1000,
           height: "auto",
-          eventMinHeight: 75,
           navLinks: true,
           nowIndicator: true,
           eventTimeFormat: {
@@ -206,28 +267,73 @@
             minute: "2-digit",
             meridiem: false,
           },
-          eventDidMount: function (info) {
-            // Titre comme infobulle complète
-            info.el.title = info.event.title;
+          eventClick: function (info) {
+            // Récupérer les informations de l'événement
+            const event = info.event;
+            const title = event.title;
+            const start = event.start
+              ? formatDateTime(event.start)
+              : "Non spécifié";
+            const end = event.end ? formatDateTime(event.end) : "Non spécifié";
+            const description = event.extendedProps.description || "";
 
-            const description = info.event.extendedProps.description || "";
+            // Extraire la salle du champ description
             const salleMatch = description.match(/Salle : (.+)/);
+            const salle =
+              salleMatch && salleMatch[1]
+                ? salleMatch[1].trim()
+                : "Non spécifiée";
 
-            if (salleMatch && salleMatch[1]) {
-              const eventMain = info.el.querySelector(".fc-event-title");
-              if (eventMain) {
-                // Ajouter la salle directement dans le titre
-                const originalTitle = eventMain.innerHTML;
-                eventMain.innerHTML = `${originalTitle}<br><span class="event-location">🏫 ${salleMatch[1].trim()}</span>`;
-              }
-            }
+            // Remplir le popup
+            popupEl.innerHTML = `
+        <span class="close-btn">&times;</span>
+        <h3>${title}</h3>
+        <p><strong>Début:</strong> ${start}</p>
+        <p><strong>Fin:</strong> ${end}</p>
+        <p><strong>Salle:</strong> ${salle}</p>
+      `;
+
+            // Afficher le popup et le backdrop
+            popupEl.style.display = "block";
+            backdropEl.style.display = "block";
+
+            // Empêcher la propagation pour éviter que le calendrier ne reçoive le clic
+            info.jsEvent.preventDefault();
+          },
+          eventDidMount: function (info) {
+            // Juste ajouter le titre comme infobulle pour aperçu
+            info.el.title = info.event.title;
           },
         });
 
         calendar.render();
 
+        // Fonction pour formater la date et l'heure
+        function formatDateTime(date) {
+          const options = {
+            weekday: "long",
+            day: "numeric",
+            month: "long",
+            hour: "2-digit",
+            minute: "2-digit",
+          };
+          return date.toLocaleDateString("fr-FR", options);
+        }
+
+        // Fermer le popup quand on clique sur le bouton de fermeture ou en dehors
+        document.addEventListener("click", function (e) {
+          if (
+            e.target.classList.contains("close-btn") ||
+            e.target === backdropEl
+          ) {
+            popupEl.style.display = "none";
+            backdropEl.style.display = "none";
+          }
+        });
+
         // Rafraîchissement automatique lors du redimensionnement
         window.addEventListener("resize", () => {
+          const isMobile = window.matchMedia("(max-width: 768px)").matches;
           calendar.changeView(isMobile ? "timeGridDay" : "timeGridWeek");
         });
       });
