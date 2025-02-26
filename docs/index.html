@@ -79,22 +79,20 @@
         display: flex;
         flex-direction: column;
         padding: 2px;
-        height: 100%; /* Utilise toute la hauteur disponible */
+        justify-content: flex-start;
       }
 
       .event-location {
         font-size: 0.8em;
-        opacity: 0.9;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long */
-        margin-top: 2px;
       }
 
       /* Pour les événements courts */
       .fc-timegrid-event .fc-event-main {
         padding: 1px;
-        min-height: 25px;
+      }
+
+      /* Hauteur minimale pour les événements très courts */
+      .fc-timegrid-event {
       }
 
       .fc-event:hover {
@@ -181,7 +179,7 @@
           views: {
             listWeek: {
               type: "list",
-              duration: { days: 7 },
+              duration: { days: 5 },
               listDayFormat: {
                 weekday: "short",
                 month: "numeric",
@@ -198,7 +196,9 @@
           firstDay: 1,
           slotMinTime: "08:00:00",
           slotMaxTime: "20:00:00",
+          slotHeight: 1000,
           height: "auto",
+          eventMinHeight: 75,
           navLinks: true,
           nowIndicator: true,
           eventTimeFormat: {
@@ -207,27 +207,19 @@
             meridiem: false,
           },
           eventDidMount: function (info) {
-            // Ajout du titre au survol pour les événements tronqués
-            const eventEl = info.el;
-            const eventMain = eventEl.querySelector(".fc-event-main");
-
             // Titre comme infobulle complète
-            eventEl.title = info.event.title;
+            info.el.title = info.event.title;
 
             const description = info.event.extendedProps.description || "";
             const salleMatch = description.match(/Salle : (.+)/);
 
             if (salleMatch && salleMatch[1]) {
-              const salleText = salleMatch[1].trim();
-              const salleElement = document.createElement("div");
-              salleElement.className = "event-location";
-              salleElement.innerHTML = `🏫 ${salleText}`;
-
-              // Ajouter la salle à l'élément d'événement
-              eventMain.appendChild(salleElement);
-
-              // Ajouter aussi la salle à l'infobulle
-              eventEl.title += ` | Salle: ${salleText}`;
+              const eventMain = info.el.querySelector(".fc-event-title");
+              if (eventMain) {
+                // Ajouter la salle directement dans le titre
+                const originalTitle = eventMain.innerHTML;
+                eventMain.innerHTML = `${originalTitle}<br><span class="event-location">🏫 ${salleMatch[1].trim()}</span>`;
+              }
             }
           },
         });
