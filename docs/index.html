@@ -68,21 +68,37 @@
         }
       }
 
-      /* Amélioration tactile */
+      /* Ajoutez ceci dans votre balise <style> */
       .fc-event {
+        overflow: hidden; /* Empêche le débordement du contenu */
         cursor: pointer;
         transition: opacity 0.2s;
-      }
-
-      .fc-event:hover {
-        opacity: 0.8;
       }
 
       .fc-event-main {
         display: flex;
         flex-direction: column;
         padding: 2px;
-    }
+        height: 100%; /* Utilise toute la hauteur disponible */
+      }
+
+      .event-location {
+        font-size: 0.8em;
+        opacity: 0.9;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Ajoute des points de suspension si le texte est trop long */
+        margin-top: 2px;
+      }
+
+      /* Pour les événements courts */
+      .fc-timegrid-event .fc-event-main {
+        padding: 1px;
+      }
+
+      .fc-event:hover {
+        opacity: 0.8;
+      }
     </style>
   </head>
   <body>
@@ -191,18 +207,26 @@
           },
           eventDidMount: function (info) {
             // Ajout du titre au survol pour les événements tronqués
-            info.el.title = info.event.title;
+            const eventEl = info.el;
+            const eventMain = eventEl.querySelector(".fc-event-main");
+
+            // Titre comme infobulle complète
+            eventEl.title = info.event.title;
 
             const description = info.event.extendedProps.description || "";
             const salleMatch = description.match(/Salle : (.+)/);
 
             if (salleMatch && salleMatch[1]) {
+              const salleText = salleMatch[1].trim();
               const salleElement = document.createElement("div");
-              salleElement.style.fontSize = "0.85em";
-              salleElement.style.color = "#666";
-              salleElement.textContent = `🏫 ${salleMatch[1].trim()}`;
+              salleElement.className = "event-location";
+              salleElement.innerHTML = `🏫 ${salleText}`;
 
-              info.el.querySelector(".fc-event-main").appendChild(salleElement);
+              // Ajouter la salle à l'élément d'événement
+              eventMain.appendChild(salleElement);
+
+              // Ajouter aussi la salle à l'infobulle
+              eventEl.title += ` | Salle: ${salleText}`;
             }
           },
         });
