@@ -35,7 +35,10 @@ def filter_calendar():
             groupe = remarque_match.group(1).strip().lower()
             
             if matiere in config['filters']:
-                if str(config['filters'][matiere]).lower() not in groupe:
+                has_group_info = any(group_letter.lower() in groupe for group_letter in ['A', 'B'])
+                
+                # Si les remarques contiennent des infos de groupe mais pas le bon groupe, filtrer
+                if has_group_info and str(config['filters'][matiere]).lower() not in groupe:
                     keep = False
         
         if keep:
