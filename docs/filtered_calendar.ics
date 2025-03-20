@@ -523,6 +523,20 @@ DESCRIPTION:\nMatière : Modélisation de problèmes et Optimisation comb.
 LOCATION:D013 (Ireste) 110pl + Vp (Cours-Examens)
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:Examens - Test\, intégration et déploiement logiciels\, COHEN\, 
+ Julien\, MOTTU\, Jean-Marie
+DTSTART:20250317T103000
+DTEND:20250317T110000
+DTSTAMP:20250320T051535
+UID:2279990-47
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Test\, intégration et déploiement logiciels\nPe
+ rsonnel : COHEN\, Julien\, MOTTU\, Jean-Marie\nGroupe : INFO4 Groupe 1\, I
+ NFO4 Groupe 2\, INFO4 Groupe 3\nSalle : D013 (Ireste) 110pl + Vp (Cours-Ex
+ amens)\nRemarques : 1/3 Temps
+LOCATION:D013 (Ireste) 110pl + Vp (Cours-Examens)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:Réunion de rentrée - MARINICA\, Claudia\, NORMAND\, Nicolas
 DTSTART:20240902T111500
 DTEND:20240902T123000
@@ -3411,6 +3425,18 @@ DESCRIPTION:\nMatière : Réseaux de neurones avancés\nPersonnel : MOUCHE
 LOCATION:Amphi 1 (Ireste) 350pl + Vp
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TD - Patrons de conception logicielle\, PIGEAU\, Antoine
+DTSTART:20250318T140000
+DTEND:20250318T153000
+DTSTAMP:20250320T051535
+UID:2214228-296
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : PIG
+ EAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : D004 (Ireste) 65pl + Vp (C
+ ours)\nRemarques : TD2
+LOCATION:D004 (Ireste) 65pl + Vp (Cours)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:CM - Questions éthiques\, sociétales & écolo en info\, KUNTZ-CO
  SPEREC\, Pascale
 DTSTART:20250325T140000
@@ -3764,6 +3790,21 @@ DESCRIPTION:\nMatière : Analyse exploratoire des données\nPersonnel : KU
 LOCATION:D013 (Ireste) 110pl + Vp (Cours-Examens)
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:Examens - apprentissage par renforcement\, AIT OUBELLI\, Lynda\, L
+ E CAPITAINE\, Hoel
+DTSTART:20250311T170000
+DTEND:20250311T173000
+DTSTAMP:20250320T051535
+UID:2216827-326
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : apprentissage par renforcement\nPersonnel : AIT O
+ UBELLI\, Lynda\, LE CAPITAINE\, Hoel\nGroupe : INFO4 Groupe 3\nSalle : C00
+ 2 (IRESTE) 13PC + Vp (info)\, C003 (Ireste) VP +13 PC (info)\, D117 (Irest
+ e) 24pl + Vp (Cours-TP)\nRemarques : 1/3 temps
+LOCATION:C002 (IRESTE) 13PC + Vp (info)\, C003 (Ireste) VP +13 PC (info)\,
+  D117 (Ireste) 24pl + Vp (Cours-TP)
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:Projet - Projet Transversal II
 DTSTART:20250401T170000
 DTEND:20250401T183000
@@ -3784,6 +3825,19 @@ CATEGORIES:CELCAT Timetabler (vcal) - 2025
 DESCRIPTION:\nMatière : Projet transversal 1\nGroupe : INFO4 PROMOTION\nS
  alle : Pas de salle
 LOCATION:Pas de salle
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Examens - Réseaux de neurones avancés\, MOUCHERE\, Harold\, NORM
+ AND\, Nicolas
+DTSTART:20250408T171500
+DTEND:20250408T174500
+DTSTAMP:20250320T051535
+UID:2216468-329
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Réseaux de neurones avancés\nPersonnel : MOUCHE
+ RE\, Harold\, NORMAND\, Nicolas\nGroupe : IDIA 4\, INFO4 Groupe 1\, INFO4 
+ Groupe 3\nSalle : Amphi 1 (Ireste) 350pl + Vp\nRemarques : 1/3 temps
+LOCATION:Amphi 1 (Ireste) 350pl + Vp
 END:VEVENT
 BEGIN:VEVENT
 SUMMARY:CM - Société : Economie circulaire\, THOREL\, Gwenaël
@@ -6849,6 +6903,18 @@ DESCRIPTION:\nMatière : Entreprise : Santé au travail 2\nPersonnel : BAR
 LOCATION:D010 (Ireste) 48pl + Vp (Cours)
 END:VEVENT
 BEGIN:VEVENT
+SUMMARY:TD - Patrons de conception logicielle\, PIGEAU\, Antoine
+DTSTART:20250320T080000
+DTEND:20250320T093000
+DTSTAMP:20250320T051535
+UID:2263614-573
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : PIG
+ EAU\, Antoine\nGroupe : INFO4 Groupe 3\nSalle : C008 (IRESTE) 50pl + VP\nR
+ emarques : TD3
+LOCATION:C008 (IRESTE) 50pl + VP
+END:VEVENT
+BEGIN:VEVENT
 SUMMARY:TD - Systèmes de raisonnement probabiliste\, LERAY\, Philippe
 DTSTART:20250410T080000
 DTEND:20250410T093000
@@ -9066,6 +9132,18 @@ DESCRIPTION:\nMatière : Techniques de base de l'IA - FISA S7\, Techniques
   de base de l'Intelligence artificielle\nPersonnel : MARTINEZ\, Jose\nGrou
  pe : IDIA 4\, INFO4 Groupe 1\, INFO4 Groupe 2\, INFO4 Groupe 3\nSalle : Am
  phi 1 (Ireste) 350pl + Vp\nRemarques : 1/3 Temps
+LOCATION:Amphi 1 (Ireste) 350pl + Vp
+END:VEVENT
+BEGIN:VEVENT
+SUMMARY:Examens - Patrons de conception logicielle\, PIGEAU\, Antoine
+DTSTART:20250425T093000
+DTEND:20250425T100000
+DTSTAMP:20250320T051535
+UID:2219584-746
+CATEGORIES:CELCAT Timetabler (vcal) - 2025
+DESCRIPTION:\nMatière : Patrons de conception logicielle\nPersonnel : PIG
+ EAU\, Antoine\nGroupe : INFO4 Groupe 1\, INFO4 Groupe 2\, INFO4 Groupe 3\n
+ Salle : Amphi 1 (Ireste) 350pl + Vp\nRemarques : 1/3 temps
 LOCATION:Amphi 1 (Ireste) 350pl + Vp
 END:VEVENT
 BEGIN:VEVENT
