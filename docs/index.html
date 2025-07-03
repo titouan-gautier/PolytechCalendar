@@ -284,6 +284,13 @@
                 ? salleMatch[1].trim()
                 : "Non spécifiée";
 
+            // Extraire les remarques du champ description
+            const remarquesMatch = description.match(/Remarques : (.+)/);
+            const remarques =
+              remarquesMatch && remarquesMatch[1]
+                ? remarquesMatch[1].trim()
+                : "Aucune remarque";
+
             // Remplir le popup
             popupEl.innerHTML = `
         <span class="close-btn">&times;</span>
@@ -291,6 +298,7 @@
         <p><strong>Début:</strong> ${start}</p>
         <p><strong>Fin:</strong> ${end}</p>
         <p><strong>Salle:</strong> ${salle}</p>
+        <p><strong>Remarques:</strong> ${remarques}</p>
       `;
 
             // Afficher le popup et le backdrop
